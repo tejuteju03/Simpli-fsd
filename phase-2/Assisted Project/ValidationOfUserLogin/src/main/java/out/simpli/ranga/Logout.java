@@ -1,0 +1,29 @@
+package out.simpli.ranga;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class Logout {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setContentType("text/html");
+		
+		PrintWriter out = response.getWriter();
+		
+//		Invalidate the session here
+		request.getSession().invalidate();
+		
+		out.println("<h2>You are now logged out...<br>");
+		
+		out.println("<a href='index.html'>Login again</a>");
+	}
+
+}
+
+
+
+
+
